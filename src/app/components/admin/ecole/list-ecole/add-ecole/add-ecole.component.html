@@ -1,0 +1,94 @@
+<div class="head-modal">
+    <h1> Ajouter une école </h1>
+</div>
+<div class="modal-content">
+    <div>
+        <form [formGroup]="addEcoleForm">
+           <div class="container" >
+            <div class="row" >
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Nom de l'école</label>
+                        <input  type="text" formControlName="nameEcole" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                      <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Type d'école</label>
+                        <select class="form-select"   formControlName="typeEcole">
+                            <option value="Privee">Privee</option>
+                            <option value="Public">Public</option>
+                            <!-- <option *ngFor="let data of listPatient" type="number" [value]="data.patientId">
+                                {{data.nomComplet}}
+                            </option> -->
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Téléphone</label>
+                        <input  type="text" formControlName="telephoneEcole" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input  type="text" formControlName="emailEcole" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-25">
+                        <label for="exampleFormControlInput1" class="form-label">N° Rue</label>
+                        <input  type="text" formControlName="numeroRue" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                    <div class="mb-3 w-25">
+                        <label for="exampleFormControlInput1" class="form-label">Rue</label>
+                        <input  type="text" formControlName="rueName" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Quartier</label>
+                        <input  type="text" formControlName="quartier" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Ville</label>
+                        <input  type="text" formControlName="ville" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput1" class="form-label">Pays</label>
+                        <input  type="text" formControlName="pays" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Site web</label>
+                        <input  type="text" formControlName="siteWeb" class="form-control"
+                          id="exampleFormControlInput1">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-25" style="gap: 20px; display: flex;">
+                        <button mat-raised-button color="primary" (click)="addEcole()">Ajouter</button>
+                        <button mat-raised-button color="warn" (click)="closeModal()">Annuler</button>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<section>
+    <div class="container-form">
+        <div class="user sigin-content">
+            <div class="image">
+                <img src="../../../../assets/images/fond/phone.jpg" alt="login">
+            </div>
+            <div class="form-content">
+                <form [formGroup]="loginForm">
+                    <h2>Login</h2>
+                    <div class="mb-3">
+                        <select class="form-select" formControlName="ecole" >
+                            <option selected>Select school</option>
+                            <option value="Ecole1">Ecole1</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" formControlName="telephone" class="form-label">Téléphone</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" formControlName="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <button class="button-form" (click)="dashboard()">Login</button>
+                    </div>
+                    <p class="signup">
+                        Don't have an account ?
+                        <a style="cursor: pointer;" (click)="toggleForm()">Sign Up.</a>
+                      </p>
+                </form>
+            </div>
+        </div>
+        <div class="user sigup-content">
+            <div class="image">
+                <img src="../../../../assets/images/fond/phone.jpg" alt="login">
+            </div>
+            <div class="form-content">
+                <form>
+                    <h2>Register</h2>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Téléphone</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="mb-3">
+                        <button class="button-form">Register</button>
+                    </div>
+                    <p class="signup">
+                        Don't have an account ?
+                        <a style="cursor: pointer;" (click)="toggleForm()">Sign Up.</a>
+                      </p>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>

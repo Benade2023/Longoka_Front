@@ -1,0 +1,38 @@
+<div class="head-modal">
+    <h1> Ajouter un profile </h1>
+</div>
+<div class="modal-content">
+    <div>
+        <form [formGroup]="addProfileForm">
+           <div class="container" >
+            <div class="row" >
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Nom du profile</label>
+                        <input  type="text" formControlName="profileName" class="form-control"
+                          id="exampleFormControlInput1" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Description</label>
+                        <textarea  type="text" formControlName="description" class="form-control"
+                          id="exampleFormControlInput1" required></textarea>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-25" style="gap: 20px; display: flex;">
+                        <button mat-raised-button color="primary" [disabled]="!addProfileForm.valid" 
+                        (click)="addProfile()">Ajouter</button>
+                        <button mat-raised-button color="warn" (click)="closeModal()">Annuler</button>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </form>
+    </div>
+</div>

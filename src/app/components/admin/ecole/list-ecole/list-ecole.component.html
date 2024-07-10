@@ -1,0 +1,84 @@
+<app-sidebar></app-sidebar>
+<div class="container-outlet">
+    <div class="container-table">
+        <div class="contenue">
+            <h1>Ecole</h1>
+            <div>
+                <mat-card>
+                    <mat-card-header>
+                        <h2>Liste des écoles</h2>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="flex-filter">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label"></label>
+                                <input #input style="width: 300px;" type="text" (keyup)="filterTable($event)" class="form-control"
+                                  id="exampleFormControlInput1" placeholder="Recherchez une école">
+                              </div>
+                              <div>
+                                <button mat-icon-button color="primary" (click)="addEcole()">
+                                    <mat-icon>+</mat-icon>
+                                </button>
+                              </div>
+                        </div>
+                        <div class="mat-elevation-z8">
+                            <table mat-table [dataSource]="dataSource" matSort class="advance-table">
+                                <ng-container matColumnDef="nomEcole">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom de l'école</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.nameEcole}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="telephone">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Téléphone</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.telephoneEcole}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="email">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.emailEcole}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="quartier">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Quartier</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.quartier}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="ville">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Ville</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.ville}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="pays">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Pays</th>
+                                    <td mat-cell *matCellDef="let row"> {{row.pays}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="action">
+                                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Pays</th>
+                                    <td mat-cell *matCellDef="let row">
+                                        <button mat-icon-button class="tbl-action-btn" color="accent"
+                                        (click)="detailEcole(row.ecoleId)">
+                                        <mat-icon>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" style="color: rgb(43, 136, 3);"
+                                          fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                          <path
+                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                        </svg>
+                                        </mat-icon>
+                                      </button>
+                                    </td>
+                                </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">Aucune école trouvée "{{input.value}}"</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </mat-card-content>
+                    <br>
+                    <mat-card-footer>
+                        <mat-paginator [pageSizeOptions]="[5,10,50]" showFirstLastButtons></mat-paginator>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

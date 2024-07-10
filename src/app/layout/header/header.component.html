@@ -1,0 +1,38 @@
+<div class="header" style="z-index: 100;">
+    <div class="header-container">
+        <div class="logo">
+          <p>LONGOKA</p>
+        </div>
+        <div class="navList">
+            <div class="navList-menu">
+               <a (click)="home()">Home</a>
+               <a>About us</a>
+               <a>News</a>
+               <a>Contacts</a>
+            </div>
+        </div>
+        <div class="connexion">
+            <button class="btn btn-primary buton" routerLink="/authenticate/login">Connexion</button>
+        </div>
+    </div>
+</div>
+<div style="position: fixed; z-index: 100; text-align: right; top: 10px;right: 10px; width: 100%;">
+      <div class="button-menu" (click)="toggleForm()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+          </svg>
+    </div>
+</div>
+<!-- <div class="sidebar" *ngIf="collapsed" [ngClass]="collapsed ? 'sidenav-collapsed' : ''" > -->
+    <div class="sidebar" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+    <div *ngIf="collapsed" class="logo-side">
+        <p>LONGOKA</p>
+    </div>
+    <div *ngIf="collapsed" class="side-navList">
+        <a>Home</a> 
+        <a>About us</a> 
+        <a>Actualitis</a> 
+        <a>News</a>
+        <a>Contacts</a>
+    </div>
+</div>

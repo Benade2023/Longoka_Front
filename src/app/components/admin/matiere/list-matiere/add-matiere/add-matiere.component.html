@@ -1,0 +1,111 @@
+<div class="head-modal">
+    <h1> Ajouter une matiere </h1>
+</div>
+<div class="modal-content">
+    <div>
+        <form [formGroup]="addMatiereForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3 w-100">
+                            <label for="exampleFormControlInput1" class="form-label">Cycle</label>
+                            <select class="form-select" formControlName="niveau">
+                                <option value="Prescolaire">Prescolaire</option>
+                                <option value="Primaire">Primaire</option>
+                                <option value="College">College</option>
+                                <option value="Lycee">Lycee</option>
+                                <option value="Tous les cycles">Tous les cycles</option>
+                                <!-- <option *ngFor="let data of listPatient" type="number" [value]="data.patientId">
+                                {{data.nomComplet}}
+                            </option> -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3 w-100">
+                            <label for="exampleFormControlInput1" class="form-label">Nom de la matiere</label>
+                            <input type="text" formControlName="matiereName" class="form-control"
+                                id="exampleFormControlInput1" required>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ng-container formArrayName="classe">
+                        <ng-container *ngFor="let class of Classe.controls; let i = index">
+                            <ng-container [formGroupName]="i">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3 w-50">
+                                            <label for="exampleFormControlInput1" class="form-label">Classe</label>
+                                            <select class="form-select" (change)="getClasseId()"
+                                             formControlName="classeId">
+                                                <option *ngFor="let data of listClasse" type="text"
+                                                    [value]="data.classeId">
+                                                    {{data.classeName}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3 w-50">
+                                            <label for="exampleFormControlInput1" class="form-label">Nom de la classe</label>
+                                            <input  type="text" #classeName formControlName="classeName" class="form-control"
+                                              id="exampleFormControlInput1" required>
+                                        </div>
+                                        <!-- <div class="mb-3 w-50">
+                                            <label for="exampleFormControlInput1" class="form-label">Cycle</label>
+                                            <select class="form-select"   formControlName="niveau">
+                                                <option value="Prescolaire">Prescolaire</option>
+                                                <option value="Primaire">Primaire</option>
+                                                <option value="College">College</option>
+                                                <option value="Lycee">Lycee</option>
+                                                <option value="Autre">Autre</option>
+                                              </select>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <button mat-raised-button color="warn" (click)="DeleteClasse(i)">
+                                                Suprimé
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3 w-50">
+                            <button mat-raised-button color="primary" (click)="AddClasse()">Add classe</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Classe</label>
+                        <select class="form-select"   formControlName="classe">
+                            <option *ngFor="let data of listClasse" type="text" [value]="data.classeId">
+                                {{data.classeName}}
+                            </option>
+                          </select>
+                    </div>
+                </div>
+            </div> -->
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3 w-25" style="gap: 20px; display: flex;">
+                            <button mat-raised-button color="primary" [disabled]="!addMatiereForm.valid"
+                                (click)="addMatiere()">Ajouter</button>
+                            <button mat-raised-button color="warn" (click)="closeModal()">Annuler</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

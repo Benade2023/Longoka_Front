@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "My Postgres DB",
+            "database": "Longoka",
+            "username": "postgres",
+            "password": "Esd@n2023M@bondzo"
+        }
+    ]
+}

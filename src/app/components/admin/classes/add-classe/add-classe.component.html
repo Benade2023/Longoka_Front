@@ -1,0 +1,46 @@
+<div class="head-modal">
+    <h1> Ajouter une classe </h1>
+</div>
+<div class="modal-content">
+    <div>
+        <form [formGroup]="addClasseForm">
+           <div class="container" >
+            <div class="row" >
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Cycle</label>
+                        <select class="form-select"   formControlName="niveau">
+                            <option value="Prescolaire">Prescolaire</option>
+                            <option value="Primaire">Primaire</option>
+                            <option value="College">College</option>
+                            <option value="Lycee">Lycee</option>
+                            <option value="Autre">Autre</option>
+                            <!-- <option *ngFor="let data of listPatient" type="number" [value]="data.patientId">
+                                {{data.nomComplet}}
+                            </option> -->
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Nom de la classe</label>
+                        <input  type="text" formControlName="classeName" class="form-control"
+                          id="exampleFormControlInput1" required>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-25" style="gap: 20px; display: flex;">
+                        <button mat-raised-button color="primary" [disabled]="!addClasseForm.valid" 
+                        (click)="addClasse()">Ajouter</button>
+                        <button mat-raised-button color="warn" (click)="closeModal()">Annuler</button>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </form>
+    </div>
+</div>
