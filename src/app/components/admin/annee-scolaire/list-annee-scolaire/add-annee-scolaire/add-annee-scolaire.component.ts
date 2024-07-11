@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, UntypedFormGroup, Validators } from '@angular/forms';
 import { MaterialModule } from '../../../../../shared/material/material.module';
 import { AnneeScolaireService } from '../../../../../core/services/anneeScolaire.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { userTest } from '../../../../../core/models/userTest.model';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-add-annee-scolaire',
@@ -35,6 +36,7 @@ export class AddAnneeScolaireComponent implements OnInit {
     private anneeService: AnneeScolaireService,
     private builder: FormBuilder,
     private ref: MatDialogRef<AddAnneeScolaireComponent>,
+    @Inject(DOCUMENT) private _document: Document
   ){}
 
   ngOnInit(): void {
@@ -45,6 +47,10 @@ export class AddAnneeScolaireComponent implements OnInit {
       description: ['', Validators.required],
       ecoleId: this.userTest?.ecoleId
     })
+  }
+
+  refreshPage(){
+    this._document.defaultView?.location.reload();
   }
 
   //Methode d'ajout d'une école//

@@ -67,6 +67,17 @@ export const navBardata: RouteInfo[] = [
         role: ['Admin'],
         subMenu: [],
     },
+    {
+        routerLink: '/admin/parents/listParents',
+        icon: 'B',
+        label: 'Tuteurs',
+        class: 'menu-toggle',
+        groupTitle: false,
+        badge: '',
+        badgeClass: '',
+        role: ['Admin'],
+        subMenu: [],
+    },
     // {
     //     routerLink: '',
     //     icon: 'B',

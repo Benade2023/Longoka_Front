@@ -1,0 +1,108 @@
+<div class="head-modal">
+    <h1> Ajouter un tuteur </h1>
+</div>
+<div class="modal-content">
+    <div>
+        <form [formGroup]="addParentForm">
+           <div class="container" >
+            <div class="row" >
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput10" class="form-label">Nom & Prénom</label>
+                        <input  type="text" formControlName="completName" class="form-control"
+                          id="exampleFormControlInput10">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput11" class="form-label">Date de naissance</label>
+                        <input  type="date" formControlName="birthday" class="form-control"
+                          id="exampleFormControlInput11">
+                      </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput12" class="form-label">Téléphone</label>
+                        <input  type="text" formControlName="telephoneParent" class="form-control"
+                          id="exampleFormControlInput12">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput13" class="form-label">Email</label>
+                        <input  type="text" formControlName="emailParent" class="form-control"
+                          id="exampleFormControlInput13">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-25">
+                        <label for="exampleFormControlInput14" class="form-label">N° Rue</label>
+                        <input  type="number" formControlName="numeroRue" class="form-control"
+                          id="exampleFormControlInput14">
+                      </div>
+                    <div class="mb-3 w-25">
+                        <label for="exampleFormControlInput15" class="form-label">Rue</label>
+                        <input  type="text" formControlName="rueName" class="form-control"
+                          id="exampleFormControlInput15">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput16" class="form-label">Quartier</label>
+                        <input  type="text" formControlName="quartier" class="form-control"
+                          id="exampleFormControlInput16">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput17" class="form-label">Ville</label>
+                        <input  type="text" formControlName="ville" class="form-control"
+                          id="exampleFormControlInput17">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput18" class="form-label">Pays</label>
+                        <input  type="text" formControlName="pays" class="form-control"
+                          id="exampleFormControlInput18">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput19" class="form-label">Username</label>
+                        <input  type="text" formControlName="username" class="form-control"
+                          id="exampleFormControlInput19">
+                      </div>
+                    <div class="mb-3 w-50">
+                        <label for="exampleFormControlInput110" class="form-label">Password</label>
+                        <input  type="password" formControlName="password" class="form-control"
+                          id="exampleFormControlInput110">
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-100">
+                        <label for="exampleFormControlInput1" class="form-label">Profile</label>
+                        <select class="form-select"   formControlName="profileId">
+                            <option *ngFor="let data of profilList" [value]="data.profileId">
+                                {{data.profileName}}
+                            </option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3 w-25" style="gap: 20px; display: flex;">
+                        <button mat-raised-button color="primary" [disabled]="!addParentForm.valid"
+                         (click)="addParent()">Ajouter</button>
+                        <button mat-raised-button color="warn" (click)="closeModal()">Annuler</button>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </form>
+    </div>
+</div>
